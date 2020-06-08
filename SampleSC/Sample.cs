@@ -14,8 +14,12 @@ class Sample:Form
     //デフォルトコンストラクタ
     public Sample()
     {
-   
-    
+       int[] scores = {64, 71, 31, 97, 54};
+
+        for (int i = 0; i < scores.Length; i++)
+        {
+            Console.WriteLine(scores[i]);
+        }
     
     
     
