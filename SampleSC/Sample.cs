@@ -16,20 +16,14 @@ class Sample : Form
     //デフォルトコンストラクタ
     public Sample()
     {
-        string moji = "";
+        var rand = new Random();
 
-        //stringの別名（エイリアス）がString
 
-        var str = "";
+        int r = rand.Next(0, 100);//0から100
 
-        str = Console.ReadLine();
-        var city = str.Split(',');
-
-        for (int i = 0; i < city.Length; i++)
+        for (int j = 0; j < 20; j++)
         {
-            Console.Write("群馬県");
-            Console.WriteLine(city[i] + "市");
-
+            Console.Write("{0} ", rand.Next(1, 20));
 
         }
     }
