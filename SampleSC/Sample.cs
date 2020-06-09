@@ -15,58 +15,13 @@ class Sample:Form
     //デフォルトコンストラクタ
     public Sample()
     {
-        //int[] scores = new int [5];
-        //int sum = 0;
-        //scores[0] = 10;
-        //scores[1] = 20;
-        //scores[2] = 30;
-        //scores[3] = 40;
-        //scores[4] = 50;
+        string moji = "";
 
-        //整数値の取り込み
-
-
-        //値の入力
-        // for (int i = 0; i < scores.Length; i++)
-        //{
-
-        //    Console.Write("scores[" + i + "] = "); //画面に文字を出力
-
-        //  scores[i] = int.Parse(Console.ReadLine());//入力値を読み込み
-
-        //}
-
-        //Console.WriteLine();
-
-        //アスタリスク出力
-        //for (int j = 0; j < scores.Length; j++)
-        //{
-        //  for (int i = 0; i < scores[j]; i++)
-        //{
-        //  Console.Write("*");
-        //}
-        //Console.WriteLine();
-
-        //入力した分繰り返し
-        Console.Write("段数" );
-        int count = int.Parse(Console.ReadLine());
-        
-            //アスタリスク出力
-        for (int i = 0; i < count; i++)
-        {
-            for (int j = 0; j < (count - i)-1; j++)
-            {
-                Console.Write(" ");
-            }
-
-            for (int j = 0; j < (i+1); j++)
-            {
-                Console.Write("*");
-            }
-            Console.WriteLine();
-        }
-
-
+            //stringの別名（エイリアス）がString
+        var str = "abcdefg";
+        var length = str.Length;
+        Console.WriteLine("文字数:" + str);
+        Console.WriteLine("文字数:" + length);
 
 
     }
