@@ -17,11 +17,17 @@ class Sample:Form
     {
         string moji = "";
 
-            //stringの別名（エイリアス）がString
-        var str = "abcdefg";
-        var length = str.Length;
-        Console.WriteLine("文字数:" + str);
-        Console.WriteLine("文字数:" + length);
+        //stringの別名（エイリアス）がString
+        Console.Write("文字列：");
+        var str = Console.ReadLine();
+        Console.Write("置換前：");
+        string beformoji = Console.ReadLine();
+        Console.Write("置換後：");
+        string aftermoji = Console.ReadLine();
+
+        var str2 = str.Replace(beformoji, aftermoji);
+        Console.WriteLine(str2);
+
 
 
     }
