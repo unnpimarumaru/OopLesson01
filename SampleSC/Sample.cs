@@ -46,13 +46,14 @@ class Sample:Form
         //}
         //Console.WriteLine();
 
-
+        //入力した分繰り返し
         Console.Write("段数" );
         int count = int.Parse(Console.ReadLine());
         
+            //アスタリスク出力
         for (int i = 0; i < count; i++)
         {
-            for (int j = 0; j <= i; j++)
+            for (int j = 0; j <=(count-i); j++)
             {
                 Console.Write("*");
             }
