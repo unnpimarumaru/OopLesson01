@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 //Formクラスを継承したSampleクラス
@@ -53,7 +54,12 @@ class Sample:Form
             //アスタリスク出力
         for (int i = 0; i < count; i++)
         {
-            for (int j = 0; j <=(count-i); j++)
+            for (int j = 0; j < (count - i)-1; j++)
+            {
+                Console.Write(" ");
+            }
+
+            for (int j = 0; j < (i+1); j++)
             {
                 Console.Write("*");
             }
