@@ -14,7 +14,7 @@ class Sample:Form
     //デフォルトコンストラクタ
     public Sample()
     {
-        int[] scores = new int[5];
+        int[] scores = new int [5];
         int sum = 0;
         //scores[0] = 10;
         //scores[1] = 20;
@@ -33,10 +33,23 @@ class Sample:Form
 
             scores[i] = int.Parse(Console.ReadLine());//入力値を読み込み
 
-            sum += scores[i];
-
         }
-        Console.WriteLine("入力された値の合計は" + sum + "です");
+
+        Console.WriteLine();
+
+        //アスタリスク出力
+        for (int j = 0; j < scores.Length; j++)
+        {
+            for (int i = 0; i < scores[j]; i++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+        }
+        
     }
 
+
+
 }
+
