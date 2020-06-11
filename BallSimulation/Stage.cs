@@ -3,8 +3,10 @@
 class Stage : Form
 {
     //ボールオブジェクト表示用
-    private PictureBox soccreBall = new PictureBox();
+    private PictureBox pictureBoxBall = new PictureBox();
+    private Ball ball;
 
+   
 
 
     public static void Main()
@@ -21,15 +23,16 @@ class Stage : Form
         Text = "ボールシミュレーション";
 
         Ball ball = new Ball();//ボールオブジェクトの作成
-        PictureBox pictureBox = new PictureBox();
-        pictureBox.Width = 100;
-        pictureBox.Height = 100;
-        pictureBox.Top = (int)ball.Ypos;
-        pictureBox.Left = (int)ball.Xpos;
-        pictureBox.Image = ball.Img;
-        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-        pictureBox.Parent = this;
-
+        pictureBoxBall.Width = 100;
+        pictureBoxBall.Height = 100;
+        pictureBoxBall.Top = (int)ball.Ypos;
+        pictureBoxBall.Left = (int)ball.Xpos;
+        pictureBoxBall.Image = ball.Img;
+        pictureBoxBall.SizeMode = PictureBoxSizeMode.StretchImage;
+        pictureBoxBall.Parent = this;
+        ball.Move();
+       pictureBoxBall.Left = (int)ball.Xpos;
+       pictureBoxBall.Top = (int)ball.Ypos;
     }
 
 

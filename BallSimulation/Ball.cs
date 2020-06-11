@@ -21,7 +21,12 @@ class Ball
 
     }
 
-
+    //移動
+    public void Move()
+    {
+        Xpos += 10;
+        Ypos += 10;
+    }
 
 
 
