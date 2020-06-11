@@ -10,6 +10,9 @@ class Ball
     public double Ypos { get; set; } //Y座標
     public Image Img { get; set; }//画像データ
 
+    private double moveX; //　加速度（X)
+    private double moveY; //加速度（Y)
+
     //コンストラクタ
     public Ball()
     {
@@ -18,14 +21,17 @@ class Ball
         Ypos = 0;
         Img = Image.FromFile(@"images\soccer_ball.png");
 
-
+        moveX = 5;
+        moveY = 5;
     }
+
+   
 
     //移動
     public void Move()
     {
-        Xpos += 10;
-        Ypos += 10;
+        Xpos += moveX;
+        Ypos += moveY;
     }
 
 

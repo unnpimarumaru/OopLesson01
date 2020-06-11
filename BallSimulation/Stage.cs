@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 class Stage : Form
 {
@@ -6,7 +7,8 @@ class Stage : Form
     private PictureBox pictureBoxBall = new PictureBox();
     private Ball ball;
 
-   
+    //タイマー
+    private Timer timer = new Timer();
 
 
     public static void Main()
@@ -20,9 +22,9 @@ class Stage : Form
         //フォームクラスの設定
         Width = 1200;//幅
         Height = 800;//高さ
-        Text = "ボールシミュレーション";
+        base.Text = "ボールシミュレーション";
 
-        Ball ball = new Ball();//ボールオブジェクトの作成
+        ball = new Ball();//ボールオブジェクトの作成
         pictureBoxBall.Width = 100;
         pictureBoxBall.Height = 100;
         pictureBoxBall.Top = (int)ball.Ypos;
@@ -33,7 +35,18 @@ class Stage : Form
         ball.Move();
        pictureBoxBall.Left = (int)ball.Xpos;
        pictureBoxBall.Top = (int)ball.Ypos;
+
+        timer.Interval = 100; 　//ms
+        timer.Tick += Timer_Tick;//時間経過で呼ぶメソッド
+        timer.Start();//タイマースタート
+
+        }
+
+    private void Timer_Tick(object sender, EventArgs e)
+    {
+        ball.Move();
+        pictureBoxBall.Left = (int)ball.Xpos;
+        pictureBoxBall.Top = (int)ball.Ypos;
     }
-
-
 }
+
