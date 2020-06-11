@@ -16,16 +16,26 @@ class Sample : Form
     //デフォルトコンストラクタ
     public Sample()
     {
+        int num;
         var rand = new Random();
+        //チェック用配列
+        var checkNum = new int[20] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
 
-
-        int r = rand.Next(0, 100);//0から100
-
-        for (int j = 0; j < 20; j++)
+        for (int i = 0; i < 20; i++)
         {
-            Console.Write("{0} ", rand.Next(1, 20));
+            do
+            {
+                num = rand.Next(20) + 1;//1～２０の乱数
 
+
+               
+            } while (checkNum[num - 1] != 0);
+
+            checkNum[num - 1] = 1; //出た数の要素にチェック
+            Console.Write(num + " ");
         }
+
+        
     }
 }
 
