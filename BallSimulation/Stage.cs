@@ -11,8 +11,8 @@ class Stage : Form
     public Stage()
     {
         //フォームクラスの設定
-        Width = 800;//幅
-        Height = 600;//高さ
+        Width = 1200;//幅
+        Height = 800;//高さ
         Text = "ボールシミュレーション";
 
 
