@@ -21,18 +21,19 @@ class Ball
     
         Xpos = 0;
         Ypos = 0;
-        Img = Image.FromFile(@"images\socer_ball.png");
+        Img = Image.FromFile(@"images\soccer_ball.png");
        
        moveX = 5;
        moveY = 5;
     }
 
     //引数付きコンストラクタ(座標指定）
-    public Ball (double xp,double yp)
+    public Ball (double xp,double yp,String path)
     {
         Xpos = xp;
         Ypos = yp;
-        Img = Image.FromFile(@"images\soccer_ball.png");
+        Img = Image.FromFile(path);
+        
 
         Random rand = new Random();
 

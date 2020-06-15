@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
@@ -9,6 +10,8 @@ class Stage : Form
     private Ball ball;
 
     private Timer timer = new Timer();
+
+    String path;
 
     public static void Main()
     {
@@ -30,7 +33,19 @@ class Stage : Form
 
     private void Stage_MouseClick(object sendder, MouseEventArgs e)
     {
-        ball = new Ball(e.X-50, e.Y-50);
+        if(e.Button == MouseButtons.Left)
+        {
+            path =  @"images\soccer_ball.png";
+
+        }
+        else
+        {
+            path =  @"images\tennis_ball.png";
+           
+        }
+
+
+        ball = new Ball(e.X-50, e.Y-50, path);
         
         pictureBoxBall.Width = 100;
         pictureBoxBall.Height = 100;
