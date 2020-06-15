@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 class Stage : Form
@@ -7,9 +8,7 @@ class Stage : Form
     private PictureBox pictureBoxBall = new PictureBox();
     private Ball ball;
 
-    //タイマー
     private Timer timer = new Timer();
-
 
     public static void Main()
     {
@@ -23,28 +22,32 @@ class Stage : Form
         Width = 1200;//幅
         Height = 800;//高さ
         base.Text = "ボールシミュレーション";
+        timer.Interval = 50; //ms
+        timer.Tick += Timer_Tick; //時間経過で呼ぶメソッド
+        this.MouseClick += Stage_MouseClick;　//マウスクリックのデリケート登録
 
-        ball = new Ball();//ボールオブジェクトの作成
+    }
+
+    private void Stage_MouseClick(object sendder, MouseEventArgs e)
+    {
+        ball = new Ball(e.X-50, e.Y-50);
+        
         pictureBoxBall.Width = 100;
         pictureBoxBall.Height = 100;
-        pictureBoxBall.Top = (int)ball.Ypos;
         pictureBoxBall.Left = (int)ball.Xpos;
+        pictureBoxBall.Top = (int)ball.Ypos;
         pictureBoxBall.Image = ball.Img;
         pictureBoxBall.SizeMode = PictureBoxSizeMode.StretchImage;
         pictureBoxBall.Parent = this;
-        ball.Move();
-       pictureBoxBall.Left = (int)ball.Xpos;
-       pictureBoxBall.Top = (int)ball.Ypos;
 
-        timer.Interval = 100; 　//ms
-        timer.Tick += Timer_Tick;//時間経過で呼ぶメソッド
-        timer.Start();//タイマースタート
-
-        }
+        
+        timer.Start(); //タイマースタート
+    }
 
     private void Timer_Tick(object sender, EventArgs e)
     {
         ball.Move();
+
         pictureBoxBall.Left = (int)ball.Xpos;
         pictureBoxBall.Top = (int)ball.Ypos;
     }
