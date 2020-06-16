@@ -7,6 +7,14 @@ using System.Windows.Forms;
 //ボールクラス
 class Ball
 {
+
+    //静的プロパティ
+    public static int Count; //オブジェクトの個数をカウント
+
+    //乱数
+    Random rnd = new Random();
+
+
     //プロパティ
     public double Xpos { get; set; } //X座標
     public double Ypos { get; set; } //Y座標
@@ -33,12 +41,13 @@ class Ball
         Xpos = xp;
         Ypos = yp;
         Img = Image.FromFile(path);
-        
 
         Random rand = new Random();
 
-        moveX = rand.Next(-10, 500);
-        moveY = rand.Next(-10, 500);
+        moveX = rand.Next(-10, 100);
+        moveY = rand.Next(-10, 100);
+
+        Count++;
 
     }
 
@@ -50,7 +59,7 @@ class Ball
         
 
         Xpos += moveX;
-        Ypos += moveY;
+        Ypos += moveY++;
 
         if (Xpos >= 1000|| Xpos <=0)
         {
