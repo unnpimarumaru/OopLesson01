@@ -37,8 +37,8 @@ class Ball
 
         Random rand = new Random();
 
-        moveX = rand.Next(-10, 10);
-        moveY = rand.Next(-10, 10);
+        moveX = rand.Next(-10, 500);
+        moveY = rand.Next(-10, 500);
 
     }
 
@@ -48,8 +48,22 @@ class Ball
     public void Move()
     {
         
+
         Xpos += moveX;
         Ypos += moveY;
+
+        if (Xpos >= 1000|| Xpos <=0)
+        {
+            moveX = -moveX;
+
+        }
+        if(Ypos >= 650 || Ypos <=0)
+        {
+            moveY = -moveY;
+        }
+
+        Console.WriteLine("XPos = {0},YPos = {1}",(int)Xpos, (int)Ypos);
+
 
     }
 
