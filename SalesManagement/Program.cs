@@ -12,10 +12,19 @@ namespace SalesManagement
     {
         static void Main(string[] args)
         {
+            int total = 0; //全体の利上げ金額集計
             SalesCounter sales = new SalesCounter(ReadSales("Sales.csv"));
+            foreach(var item in sales._sales)
+            {
+                total+= item.Amount;
 
 
+            }
 
+            
+
+
+            Console.WriteLine("全体の売り上げ：{0}円", total);
         }
 
 
