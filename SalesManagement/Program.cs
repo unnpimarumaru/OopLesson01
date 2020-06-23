@@ -15,32 +15,30 @@ namespace SalesManagement
 
         static void Main(string[] args)
         {
-
-            int total = 0; //全体の利上げ金額集計
-
-            int[] totals = new int[4] { 0, 0, 0, 0};
-            string[] shops = { "新宿店", "浅草店", "丸の内店", "横浜店", };
+            Dictionary<string, int> stores = new Dictionary<string, int>();
 
             SalesCounter sales = new SalesCounter(ReadSales("Sales.csv"));
-            
-            
+
             foreach (var item in sales._sales)
             {
-                for (int i = 0; i < shops.Length; i++)
+            
+                if (stores.ContainsKey(item.ShopName))
                 {
-                    if (item.ShopName.Equals(shops[i]))
-                    {
-                        totals[i] += item.Amount;
-                        break;
-                    }
-               
+                    stores[item.ShopName] += item.Amount;
                 }
+                else
+                {
+                    stores[item.ShopName] = item.Amount;
+                }
+
             }
-            for (int i = 0; i < shops.Length; i++)
+            foreach (var item in stores)
             {
-                Console.WriteLine($"{shops[i]}の売上合計：{totals[i]}");
+                Console.WriteLine($"{item.Key}は{item.Value}です。");
             }
-        }  
+                
+            
+        }
 
         //売上データを読み込み、Saleオブジェクトのリストを返す
         static List<Sale> ReadSales(string filePath)
