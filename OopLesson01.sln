@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionarySample", "Diction
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressManagement", "AddressManagement\AddressManagement.csproj", "{685082A6-D3B4-451C-94CC-8189B58DB1D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListColklectionSample", "ListColklectionSample\ListColklectionSample.csproj", "{01BE8D72-B1E3-4EF2-8BF6-6B6F6F4EAA69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{685082A6-D3B4-451C-94CC-8189B58DB1D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{685082A6-D3B4-451C-94CC-8189B58DB1D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{685082A6-D3B4-451C-94CC-8189B58DB1D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01BE8D72-B1E3-4EF2-8BF6-6B6F6F4EAA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01BE8D72-B1E3-4EF2-8BF6-6B6F6F4EAA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01BE8D72-B1E3-4EF2-8BF6-6B6F6F4EAA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01BE8D72-B1E3-4EF2-8BF6-6B6F6F4EAA69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
