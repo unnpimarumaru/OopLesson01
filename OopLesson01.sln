@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesManagement", "SalesMan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionarySample", "DictionarySample\DictionarySample.csproj", "{CDF76A97-D400-41D9-8CDF-764D74832928}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressManagement", "AddressManagement\AddressManagement.csproj", "{685082A6-D3B4-451C-94CC-8189B58DB1D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{CDF76A97-D400-41D9-8CDF-764D74832928}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDF76A97-D400-41D9-8CDF-764D74832928}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDF76A97-D400-41D9-8CDF-764D74832928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685082A6-D3B4-451C-94CC-8189B58DB1D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685082A6-D3B4-451C-94CC-8189B58DB1D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685082A6-D3B4-451C-94CC-8189B58DB1D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685082A6-D3B4-451C-94CC-8189B58DB1D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
