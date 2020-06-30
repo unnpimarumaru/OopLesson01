@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,7 +31,7 @@ namespace ListColklectionSample
 
             if(tbName.Text == "")
             {
-                MessageBox.Show("名前を入力してください");
+                MessageBox.Show("車名を入力してください");
             }
             else
             {
@@ -39,12 +40,14 @@ namespace ListColklectionSample
 
                     Name = tbName.Text,
 
-                    Maker = tbMaker.Text,
+                    Maker = cbMaker.Text,
 
                     Category = tbCategory.Text,
 
                     carPic = pdImage.Image,
                 };
+                //メーカーをコンボボックスの入力候補に登録
+                setcomboboxMaker(cbMaker.Text);
 
                 cars.Insert(0, car);
 
@@ -52,7 +55,8 @@ namespace ListColklectionSample
 
                 initButton();
 
-                dgvCarData.CurrentCell = null;
+                nullCurrent();
+
             }
 
         }
@@ -62,9 +66,19 @@ namespace ListColklectionSample
         {
 
             tbName.Clear();
-            tbMaker.Clear();
+            cbMaker.Text = ("");
             tbCategory.Clear();
             pdImage.Image = null;
+        }
+
+        //メーカーコンボボックスの入力候補登録
+        private void setcomboboxMaker(string maker)
+        {//!で条件反転
+            if (!cbMaker.Items.Contains(maker))
+            {
+                //コンボボックスの追加
+                cbMaker.Items.Add(maker);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,9 +107,11 @@ namespace ListColklectionSample
             Car selectedCar = cars[dgvCarData.CurrentRow.Index];
 
             tbName.Text = selectedCar.Name;
-            tbMaker.Text= selectedCar.Maker;
+            cbMaker.Text= selectedCar.Maker;
             tbCategory.Text = selectedCar.Category;
             pdImage.Image = selectedCar.carPic;
+
+            initButton();
         }
         //選択したレコードの変更
         private void btModify_Click(object sender, EventArgs e)
@@ -104,7 +120,7 @@ namespace ListColklectionSample
             Car ChengeCar = cars[dgvCarData.CurrentRow.Index];
 
             ChengeCar.Name = tbName.Text;
-            ChengeCar.Maker = tbMaker.Text ;
+            ChengeCar.Maker = cbMaker.Text ;
             ChengeCar.Category = tbCategory.Text;
             ChengeCar.carPic=  pdImage.Image;
 
@@ -120,13 +136,12 @@ namespace ListColklectionSample
         {
             cars.RemoveAt(dgvCarData.CurrentRow.Index);
             initButton();
-            dgvCarData.CurrentCell = null;
-
+            nullCurrent();
             AllClearMethod();
         }
 
 
-        void initButton()
+        private void initButton()
         {
             if(cars.Count <= 0 )
             {
@@ -134,12 +149,17 @@ namespace ListColklectionSample
                 btDelete.Enabled = false;
             }
             else
-
             {
                 btModify.Enabled = true;
                 btDelete.Enabled = true;
             }
         }
+        private void nullCurrent()
+        {
+            dgvCarData.CurrentCell = null;
+            btDelete.Enabled = false;
+            btModify.Enabled = false;
 
+        }
     }
 }

@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbMaker = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbCategory = new System.Windows.Forms.TextBox();
             this.dgvCarData = new System.Windows.Forms.DataGridView();
@@ -43,6 +42,7 @@
             this.btClear = new System.Windows.Forms.Button();
             this.btModify = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
+            this.cbMaker = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pdImage)).BeginInit();
             this.SuspendLayout();
@@ -83,14 +83,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "メーカー";
             // 
-            // tbMaker
-            // 
-            this.tbMaker.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbMaker.Location = new System.Drawing.Point(116, 95);
-            this.tbMaker.Name = "tbMaker";
-            this.tbMaker.Size = new System.Drawing.Size(293, 31);
-            this.tbMaker.TabIndex = 2;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -112,22 +104,26 @@
             // dgvCarData
             // 
             this.dgvCarData.AllowUserToAddRows = false;
+            this.dgvCarData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCarData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCarData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarData.Location = new System.Drawing.Point(17, 323);
+            this.dgvCarData.Location = new System.Drawing.Point(17, 314);
             this.dgvCarData.MultiSelect = false;
             this.dgvCarData.Name = "dgvCarData";
             this.dgvCarData.ReadOnly = true;
             this.dgvCarData.RowTemplate.Height = 21;
             this.dgvCarData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCarData.Size = new System.Drawing.Size(771, 230);
+            this.dgvCarData.Size = new System.Drawing.Size(661, 230);
             this.dgvCarData.TabIndex = 3;
             this.dgvCarData.Click += new System.EventHandler(this.dgvCarData_Click);
             // 
             // btAdd
             // 
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btAdd.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btAdd.Location = new System.Drawing.Point(684, 173);
+            this.btAdd.Location = new System.Drawing.Point(684, 323);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(99, 57);
             this.btAdd.TabIndex = 5;
@@ -147,6 +143,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button1.Location = new System.Drawing.Point(684, 31);
             this.button1.Name = "button1";
@@ -162,6 +159,7 @@
             // 
             // btClear
             // 
+            this.btClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btClear.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btClear.Location = new System.Drawing.Point(684, 111);
             this.btClear.Name = "btClear";
@@ -173,10 +171,11 @@
             // 
             // btModify
             // 
+            this.btModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btModify.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btModify.Location = new System.Drawing.Point(30, 204);
+            this.btModify.Location = new System.Drawing.Point(684, 386);
             this.btModify.Name = "btModify";
-            this.btModify.Size = new System.Drawing.Size(117, 57);
+            this.btModify.Size = new System.Drawing.Size(103, 57);
             this.btModify.TabIndex = 9;
             this.btModify.Text = "変更";
             this.btModify.UseVisualStyleBackColor = true;
@@ -184,20 +183,31 @@
             // 
             // btDelete
             // 
+            this.btDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btDelete.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btDelete.Location = new System.Drawing.Point(209, 204);
+            this.btDelete.Location = new System.Drawing.Point(684, 449);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(135, 57);
+            this.btDelete.Size = new System.Drawing.Size(99, 57);
             this.btDelete.TabIndex = 10;
             this.btDelete.Text = "削除";
             this.btDelete.UseVisualStyleBackColor = true;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            // 
+            // cbMaker
+            // 
+            this.cbMaker.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.cbMaker.FormattingEnabled = true;
+            this.cbMaker.Location = new System.Drawing.Point(116, 92);
+            this.cbMaker.Name = "cbMaker";
+            this.cbMaker.Size = new System.Drawing.Size(293, 32);
+            this.cbMaker.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 529);
+            this.Controls.Add(this.cbMaker);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btModify);
             this.Controls.Add(this.btClear);
@@ -206,7 +216,6 @@
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.dgvCarData);
             this.Controls.Add(this.tbCategory);
-            this.Controls.Add(this.tbMaker);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -228,7 +237,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbMaker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbCategory;
         private System.Windows.Forms.DataGridView dgvCarData;
@@ -239,6 +247,7 @@
         private System.Windows.Forms.Button btClear;
         private System.Windows.Forms.Button btModify;
         private System.Windows.Forms.Button btDelete;
+        private System.Windows.Forms.ComboBox cbMaker;
     }
 }
 
