@@ -161,5 +161,15 @@ namespace ListColklectionSample
             btModify.Enabled = false;
 
         }
+
+        private void 終了XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void 新規入力ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllClearMethod();
+        }
     }
 }
