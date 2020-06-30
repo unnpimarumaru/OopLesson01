@@ -26,29 +26,45 @@ namespace ListColklectionSample
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            Car car = new Car()
+           
+
+            if(tbName.Text == "")
             {
+                MessageBox.Show("名前を入力してください");
+            }
+            else
+            {
+                Car car = new Car()
+                {
 
-                Name = tbName.Text,
+                    Name = tbName.Text,
 
-                Maker = tbMaker.Text,
+                    Maker = tbMaker.Text,
 
-                Category = tbCategory.Text,
+                    Category = tbCategory.Text,
 
-                carPic = pdImage.Image,
-            };
+                    carPic = pdImage.Image,
+                };
 
-            NewMethod(car);
+                cars.Insert(0, car);
+
+                AllClearMethod();
+
+                initButton();
+
+                dgvCarData.CurrentCell = null;
+            }
 
         }
+
         //入力項目全クリア
-        private void NewMethod(Car car)
+        private void AllClearMethod()
         {
-            cars.Insert(0, car);
 
             tbName.Clear();
             tbMaker.Clear();
             tbCategory.Clear();
+            pdImage.Image = null;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -94,6 +110,36 @@ namespace ListColklectionSample
 
             dgvCarData.Refresh(); //データグリッドビューの再読み込み
         }
-              
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            initButton();
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            cars.RemoveAt(dgvCarData.CurrentRow.Index);
+            initButton();
+            dgvCarData.CurrentCell = null;
+
+            AllClearMethod();
+        }
+
+
+        void initButton()
+        {
+            if(cars.Count <= 0 )
+            {
+                btModify.Enabled = false;
+                btDelete.Enabled = false;
+            }
+            else
+
+            {
+                btModify.Enabled = true;
+                btDelete.Enabled = true;
+            }
+        }
+
     }
 }

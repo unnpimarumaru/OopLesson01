@@ -42,6 +42,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btClear = new System.Windows.Forms.Button();
             this.btModify = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pdImage)).BeginInit();
             this.SuspendLayout();
@@ -110,9 +111,10 @@
             // 
             // dgvCarData
             // 
+            this.dgvCarData.AllowUserToAddRows = false;
             this.dgvCarData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCarData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarData.Location = new System.Drawing.Point(12, 277);
+            this.dgvCarData.Location = new System.Drawing.Point(17, 323);
             this.dgvCarData.MultiSelect = false;
             this.dgvCarData.Name = "dgvCarData";
             this.dgvCarData.ReadOnly = true;
@@ -172,7 +174,7 @@
             // btModify
             // 
             this.btModify.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btModify.Location = new System.Drawing.Point(112, 204);
+            this.btModify.Location = new System.Drawing.Point(30, 204);
             this.btModify.Name = "btModify";
             this.btModify.Size = new System.Drawing.Size(117, 57);
             this.btModify.TabIndex = 9;
@@ -180,11 +182,23 @@
             this.btModify.UseVisualStyleBackColor = true;
             this.btModify.Click += new System.EventHandler(this.btModify_Click);
             // 
+            // btDelete
+            // 
+            this.btDelete.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btDelete.Location = new System.Drawing.Point(209, 204);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(135, 57);
+            this.btDelete.TabIndex = 10;
+            this.btDelete.Text = "削除";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 529);
+            this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btModify);
             this.Controls.Add(this.btClear);
             this.Controls.Add(this.button1);
@@ -200,6 +214,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "車登録アプリ";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pdImage)).EndInit();
             this.ResumeLayout(false);
@@ -223,6 +238,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btClear;
         private System.Windows.Forms.Button btModify;
+        private System.Windows.Forms.Button btDelete;
     }
 }
 
